@@ -58,21 +58,42 @@ class Program
         int number2 = 0;
         int number3 = 0;
         
-        int total = 0;
+        int sum = 0;
         
         Console.WriteLine("--- Starting Program ---");
 
         Console.WriteLine("Please enter a number;"); //Asking for a number
-        string aLine; // String to hold the line of input from the keyboard
+        string aLine; // Define a String to hold the line of input from the keyboard
         aLine = Console.ReadLine();
         // we need an int to store our numbers
-        // Console.ReadLine() only returns a string
+        // Console.ReadLine() only returns a string from keyboard
         // So we need to convert the string from Console.ReadLine() to an int
         // int.Parse(string) will convert a string to an int
         
         number1 = int.Parse(aLine);
         
+        // Just to verify we are getting data from the keyboard
+        //Let's display it
+        // '+' with a string it concatenates the strings (sticks them together)
+        Console.WriteLine("Please enter a number;");
+        aLine = Console.ReadLine(); // Reuse aLine define above
+        number2 = int.Parse(aLine);
         
+        Console.WriteLine("Please enter a number;");
+        aLine = Console.ReadLine(); // Reuse aLine define above
+        number3 = int.Parse(aLine);
+        
+        // Add the numbers together to create a sum/total
+        sum = number1 + number2 + number3;
+        //Alternate coding method
+        // However you code, as long as you get a correct solution
+        //         and you understand it, it is right
+        // sum = sum + number1
+        // sum = sum + number2
+        // sum= sum + number3
+        
+        
+        Console.WriteLine("The sum is: " + sum);
         
         Console.WriteLine("--- Ending Program ---");
     }
