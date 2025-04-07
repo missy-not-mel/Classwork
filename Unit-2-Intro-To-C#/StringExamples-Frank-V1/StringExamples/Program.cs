@@ -17,7 +17,7 @@ class Program
          *
          * C# provides several methods to operate on strings:
          *
-         *    Hey) - compare the string to left of the . to string inside () for equals
+         *    .Equals(string) - compare the string to left of the . to string inside () for equals
          *     .CompareTo(string) - return a number indicating how the first string relates to the second
          *                          return a negative number if first string is less than the second
          *                          return a zero if first string is equal the second
