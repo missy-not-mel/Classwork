@@ -8,11 +8,11 @@ class Program
     static void Main(string[] args)
     {
         // Define an array to hold 3 numbers
-        int[] numbers = new int[3]; // numvers.Length =3; 2 is the largest allowable index
+        int[] numbers = new int[3]; // numbers.Length =3; 2 is the largest allowable index
         
         
         // Define an array to hold 5 numbers
-        int[] numbers = new int = [5]; // numvers.Length=5; 4 is the largest allowable index
+        int[] numbers = new int = [5]; // numbers.Length=5; 4 is the largest allowable index
 
         Console.WriteLine("--- Starting program ---");
 
