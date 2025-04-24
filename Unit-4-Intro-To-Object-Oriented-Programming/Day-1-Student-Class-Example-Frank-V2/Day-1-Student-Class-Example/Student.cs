@@ -15,6 +15,10 @@
 //     the methods that manipulate the class data (behaviors of the object)
 //
 //  class can do whatever a programmer decides it should or shouldn't do
+// public is used so anyone can instantiate objects of the class
+//
+// This class represents a student and their test scores
+//
 public class Student
 {
     // Define the data for our class
@@ -29,12 +33,12 @@ public class Student
     // Note: The data is defined without an initial value
     //       Class data should be initialized in constructors
     private string    studentName;
-    private List<int> testScores;
+    private List<double> testScores;
     
     // Define methods for the class
     
-    // One special methods for a class is called a constructor
-    // A constructor is responible for initializingthe data in a class
+    // One special methods for a class is called a constructor.
+    // A constructor is responsible for initializing the data in a class
     // (data should never be uninitialized - the starting value needs to be known)
     
     // a constructor method is special because:
@@ -48,22 +52,94 @@ public class Student
     // Define a constructor to initialize our data with values 
     //          specified by the user
 
-    public Student(string name, List<int> scores)
+    // As the class designer YOU decide what you need to properly initialize objects of the class
+    // YOU decide how many constructors you need of how users of the class can initialize your objects
+    //
+    // Default value is a value used when the real value is not known
+    //
+    // Do we want to allow an object with default values?
+    //       Does it make sense to have a default student name and default scores?
+    //         No - Don't code a default constructor to initialize with default values
+    //         Yes - Code a 0-arg constructor to assign default values : public Student()
+    //
+    // Do we want to allow storing a student name without scores?
+    //    Yes - Code a 1-arg constuctor that takes the name and assigns it studentName
+    //                                             and assigns and empty list to testScores
+    // Do we want to allow storing test scores without a name?
+    //    No - Don't code a 1-arg constructor that takes only the score: public Student(List<int>) scores
+
+    
+    /**********************************
+     * Constructors - Allow user to create object and initialize them
+     **************************************/
+    public Student(string theName)  // 1-arg constructor to accept a name only
+    {
+        studentName = theName;           // Assign the name passed to the constructor to our studentName
+        testScores = new List<double>(); // Define and assign an empty List to testScores
+    }
+    public Student(string name, List<double> scores) // 2-arg constructor
+                                                  // two parameters used to initialize an object
     {
         studentName = name;  // Set the class data to the data passed in from the user
         testScores = scores; // Set the class data to the data passed in from the user
+    }
+    
+    
+    /**********************************
+     * Methods to manipulate the class
+     **************************************/
+    
+    // We need a method to allow the user to add scores to our testScores List
+    // Every method requires a method signature and a body
+    // Method signature:    access   return
+    //                       type     type     MethodName(parameters)
+    // Method body: inside { } following method signature
+    public void AddScore(double score) // Accept a score and return nothing
+    {
+        testScores.Add(score);
+    }
+    
+    // Allow the user to get the sum of the scores 
+    // We need a method to add up scores and return the sum
+    public double SumOfScores() // No args needed as we have access to all the data we need in class
+    {
+        // Two ways we can do this
+        // 1. Use a foreach loop
+        // See if there is a method for List that do the sum for us
+        //   (There seems to be a method we could use,  but it looks complicated)
+        
+        
+        
+        
+        // We will use a foreach loop
+        foreach (double scores in testScores)
+        {
+            sum = sum + testScores; // sum+= scores is OK too 
+        }
+        
+        
+        // return the variable with the result
+        return sum;
+        
+        // Define a variable to hold what we're returning
+    }
+    
+    // Method compute the average score for user
+    public double AvgOfScores()
+    {
+        return SumOfScores()
     }
     
     // Provide a method to display our data
     // (Console.WriteLine() doesn't know how to do it)
     public void ShowStudent()
     {
-        Console.WriteLine("Name: " + studentName);
-        Console.WriteLine("Scores: ");
+        Console.WriteLine("\nName: " + studentName);
+        Console.Write("Scores: ");
 
-        foreach (int score in testScores)
+        foreach (double score in testScores)
         {
-            Console.WriteLine(score);
+            Console.Write(score + " ");
         }
     }
     

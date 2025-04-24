@@ -22,19 +22,26 @@ class Program
     
     // We need to be sure have all the data we want to store in our object
     // Before we instantiate the object
-    List<int> scores = new List<int>();
+    List<double> scores = new List<double>();
     scores.Add(100);
     scores.Add(90);
     scores.Add(80);
     
-    List<int> scores2 = new List<int>();
-    scores.Add(100);
-    scores.Add(100);
-    scores.Add(100);
+    List<double> scores2 = new List<double>();
+    scores2.Add(100);
+    scores2.Add(100);
+    scores2.Add(100);
+    
+    // Defining an object of a class is very similar to defining any other datatype
+    
+    // data
+    // type name = initial value;
+    int x = 10;
 
     // Instantiate a Student using the data we want to store in the Student object
-    Student aStudent = new Student("Frank", scores);
-    Student aStudent2 = new Student("Marquise", scores2);
+    // ClassName objName = new ClassName(initial-name, initial-scores)
+    Student aStudent = new Student("Frank", scores);    // Calling the 2-arg constructor that takes a name and scores
+    Student aStudent2 = new Student("Marquise", scores2); // Calling he 2-arg that constructor that takes a name and scores
     
     // Display the Student object we created
     // Console.WriteLine() does not now how to display an object of our class
@@ -46,6 +53,21 @@ class Program
     aStudent.ShowStudent();
     aStudent2.ShowStudent();
     
+    // Define a student with no scores
+    Student johnTheStudent = new Student("John");
+    johnTheStudent.ShowStudent();
+    
+    // Add some score to johnTheStudent
+    johnTheStudent.AddScore(86);
+    johnTheStudent.AddScore(90.5);
+    johnTheStudent.AddScore(26);
+    johnTheStudent.AddScore(67);
+    johnTheStudent.AddScore(98);
+    
+    johnTheStudent.ShowStudent();
+    
+    Console.WriteLine($"\nThe sum of scores: {johnTheStudent.sumofScores}");
+
     //Console.WriteLine(aStudent.studentName);
     }
 }
