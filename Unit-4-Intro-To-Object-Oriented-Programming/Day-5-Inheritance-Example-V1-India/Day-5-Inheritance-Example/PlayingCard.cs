@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Day_3_Inheritance
+namespace Day_5_Inheritance_Example
 {
     // This is class to represent a simple PlayingCard
     // It's in the same namespace as the application (for now and for simplicity)
@@ -74,7 +74,7 @@ namespace Day_3_Inheritance
         //
         // Constructors:   public, same name as class, no return type, may have parameters
 
-        // Constructor to initialize all instance variables aka 3-arg constructor
+        // Constructor to initialize all instance variables
         public PlayingCard(int theValue, string theSuit, string theColor)
         {
             cardValue = theValue; // initialize value to value passed 
@@ -121,9 +121,6 @@ namespace Day_3_Inheritance
          **************************************************************************************/
 
         // Override the default ToString() method
-        
-        // Default ToString() returns namespace.className
-        
         // We MUST be sure the method signature matches the method we are overriding
         // An override is substituting your processing for the default processing
 
@@ -147,31 +144,21 @@ namespace Day_3_Inheritance
         }
 
         // Equals returns true to data members of two objects are equal
-        // Default Equals() only compares the contents of the reference variable (locations)
-        // If you want to compare the contents of the objects - Create an Equals() override
-        //
-        // the keyword 'this' represents the object used to invoke the method
-        //
-        //       In the class method:   'this' represents the object to the left of the dot
-        // To execute a class method:   object.method(parameters)
-        //
-        // myCard.Equals(yourCard) --> 'this' represents myCard and otherObject represents yourCard
-        public override bool Equals(object otherObject) // Note the parameter is a generic object type
+        public override bool Equals(object otherObject)
         {
             if (otherObject.GetType() != this.GetType())  // If types differ...
             {
                 return false;                             //     they can't be equal
             }
 
-            if (otherObject == this)                      // if the same object (same reference/location)...
+            if (otherObject == this)                      // if the same object...
             {
                 return true;                              //    they must be equal
             }
 
             // Create a PlayingCard reference to generic object passed to method
             // so we can access the objects data members
-            // (otherObject is defined as a generic Object  - it must be a real Object to process)
-            PlayingCard otherCard = (PlayingCard) otherObject; // Cast the generic to an object and store it
+            PlayingCard otherCard = (PlayingCard) otherObject;
 
             if (otherCard.cardValue == this.cardValue     // if all data
                 && otherCard.cardSuit == this.cardSuit    //    members are equal
