@@ -2,7 +2,7 @@
 using System;
 
 
-namespace Day_3_Inheritance
+namespace Day_5_Inheritance_Example;
 {
     internal class Program
     {
@@ -36,7 +36,7 @@ namespace Day_3_Inheritance
             // PlayingCard newCard = aCard;  // This makes both newCard and aCard point to the same object
             PlayingCard newCard = new PlayingCard(aCard); // Use copy constructor
 
-            Console.WriteLine($"  aCard is: {aCard}");
+            Console.WriteLine($"  aCard is: {aCard}");  // PlayingCard ToString() is used to generate the object as a string
             Console.WriteLine($"newCard is: {newCard}");
 
             /*************************************************************************
@@ -68,8 +68,13 @@ namespace Day_3_Inheritance
             //      it will use the ToString() in its base class
             //      (or the generic Object ToString() if base class doesn't have one)
 
-            Console.WriteLine($"theCard: {theCard}");
-
+            Console.WriteLine($"theCard: {theCard}"); 
+            /***************************************************************************
+             *  Inheritance related code starts here
+             */
+            
+            myFuncs.WriteSeparatorLine("Inheritance stuff starts here...");
+            
             AmericanPlayingCard theCard2 = new AmericanPlayingCard(10, "Spades");
 
             // This will use the PlayingCard .Equals() method
@@ -77,6 +82,7 @@ namespace Day_3_Inheritance
             //      when C# needs to use an Equals() method for an AmericanPlayingCard
             //      it will use the Equals() in its base class
             //      (or the generic Object Equals() if base class doesn't have one)
+            // in the Equals() method: "this" represents theCard; otherCard represents theCard2
             if (theCard.Equals(theCard2))
             {
                 Console.WriteLine("They are EQUAL");
@@ -104,14 +110,21 @@ namespace Day_3_Inheritance
 
             myFuncs.WriteSeparatorLine("Display AmericanPlayingCard using base class ToString()");
 
-            Console.WriteLine(usaCard1);
+            Console.WriteLine(usaCard1); // WriteLine will look for a ToString() method to get a string
+                                         // representations of the class.
+                                         // usaCard is an AmericanPlayingCard object
+                                         // The AmericanPlayingCard class DOEs NOT have an ToString() method
+                                         // So it looks to the super class of AmericanPlayingCard to see if it has one
+                                         // PlayingCard DOES have a ToString() method, WriteLine uses it
             Console.WriteLine(usaCard2);
 
             myFuncs.WriteSeparatorLine("Compare two AmericanPlayingCards");
 
             Console.Write($"1st card: {usaCard1.CardValue} ({usaCard1.GetCardValueName()}) of {usaCard1.CardSuit}");
             
-            Console.Write($"{(usaCard1.Equals(usaCard2) ? " is EQUAL" : " is NOT equal")} to");
+            // The super class .Equals() is used because our subclass doesn't have one
+            //                    (condition)           ? value-if-true: value-if-false
+            Console.Write($"{(usaCard1.Equals(usaCard2) ? " is EQUAL"  : " is NOT equal")} to");
 
             Console.Write($" 2nd card: {usaCard2.CardValue} ({usaCard2.GetCardValueName()}) of {usaCard2.CardSuit}\n");
 
