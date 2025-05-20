@@ -52,7 +52,7 @@ public class Person
  }
  
  // Expression-bodied property
- // More consise and formal (less code, can be confusing)
+ // More concise and formal (less code, can be confusing)
  public double WeightInPounds
  {
      get => _weightInPounds;
