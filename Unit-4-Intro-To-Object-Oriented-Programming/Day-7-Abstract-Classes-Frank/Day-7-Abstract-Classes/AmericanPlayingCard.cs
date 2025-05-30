@@ -42,7 +42,7 @@ namespace Day_6_Abstract_Classes
         //        with any values it gets when instantiated
         //
         // Note: The super class (PlayingCard) only has a 3-arg ctor requiring a color
-        //       We initialise the super class to default color since it's based on the suit
+        //       We initialize the super class to default color since it's based on the suit
         //       We will change it once the processing in the constructor starts
         public AmericanPlayingCard(int theValue, string theSuit)
             : base(theValue, theSuit, DEFAULT_COLOR) // Pass all data to base class ctor

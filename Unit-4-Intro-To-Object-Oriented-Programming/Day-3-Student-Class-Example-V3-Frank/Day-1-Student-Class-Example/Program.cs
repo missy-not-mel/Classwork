@@ -14,7 +14,7 @@ class Program
         
     // Instantiate (define) a Student class object       
     // A class is data type
-    // Define an object of a class liek any other variable with a slight difference
+    // Define an object of a class like any other variable with a slight difference
     
     // data-type name = initializer;  int sum = 0;
     
