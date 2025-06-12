@@ -1,0 +1,78 @@
+/* This is a comment in CSS            */
+/* CSS defines formatting for the page */
+/* The general format: selector {
+                                  css rule;
+                                  css rule;
+                                }
+
+ selectors are; html tag-name - all elements that are defined with this tag
+                # - id="" elements with the same id="" - used for specific element
+                . - class="" elements with the same class ="" - used for specific GROUP of elements
+*/  
+/* for now we use html tags as selectors */
+
+html { /* style all the elements within the html tag */
+    background-color: rgb(6, 6, 0);
+    font-size: 25px;
+    color: antiquewhite;
+}
+h2 { /* style all the h2 tags */
+  color: rgb(90, 112, 105);
+
+}
+
+footer { /* style everything in the footer */
+  color: rgb(145, 145, 247); /* changes the text color */
+  margin-top: 50px; /* moves the text down */
+  font-size: 15px;  /* set size of font px=pixels pt=pts */
+  text-align: center;
+
+}
+p { /* styles all the paragraph tag content */
+  color: plum; /* sets the text color */
+  font-size: 20px; /* make the font this size */
+
+}
+#p2 { /* style all elements with id="p2" */
+  color: olive;
+  font-size: 18px;
+
+}
+div { /* style all the divs and everything in them */
+  background-color: rgb(66, 66, 117);
+
+}
+#whatever { /* style all elements with the id="whatever" */
+  background-color: aliceblue;
+}
+
+.normal { /* atyle all elements with class="normal" */
+  background-color: rgb(115, 93, 134);
+
+}
+/*style the <ol> of students in class */
+/* #studentList to reference its id */
+/* ol to specify all <ol> tags - this would style all the <ol> tags */
+#theStudents {
+color: chartreuse; /* sets the text color */
+font-style: italic;  /*set the text style */
+list-style: circle; /* set what is used as a bullet for list items */
+border-style: dotted; /* put a border around the element */
+border-color: rgb(10, 58, 10); /* set the color of the border */
+border-width: 3px; /* sets the width of the border */
+border-radius: 50px; /* set rounded corners - the bigger the value the more rounded it is */
+}
+
+table { /* style all the tables in html */
+  border: 2px dashed cadetblue; /* set the border width type color */
+}
+th,td { /* style all <td> tags in the html */
+   border: 1px groove orange;
+   width: 100px;
+   height: 100px;
+   text-align: center;
+}
+th{
+  color: bisque;
+  border: 1px dotted orange;
+}
