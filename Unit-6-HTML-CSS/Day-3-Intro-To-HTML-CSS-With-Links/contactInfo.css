@@ -1,0 +1,13 @@
+/* Styling for the contact info page */
+/* Style the navigation section */
+nav { /* style the nav section for the page */
+    margin-bottom: 20px; /* put space after the element on the page */
+    margin-top: 10px;    /* put space before the element on the page */
+    font-size: 10pt;     /* set the font size of the link */
+}
+div {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    display: block; /* display everything vertically */
+}

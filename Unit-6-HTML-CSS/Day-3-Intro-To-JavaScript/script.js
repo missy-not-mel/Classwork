@@ -10,6 +10,13 @@
  */
 function variables() {
   // Declares a variable where the value cannot be changed
+  const aVariable = 13;
+
+  // console.log() - display data on the console (console.writeline() or System.out.println())
+  //JavaScript supports interpolation to construct strings similar to C#
+  //
+  //Interpolation: `words ${variable}` C#: $(words {aVariable})
+  console.log('The value in aVariable is: ${aVariable}')
   // Declares a variable those value can be changed
   // Declares a variable that will always be an array
 }
